@@ -1,0 +1,253 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<title>An Artist's Tool</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  background: rgb(30,30,30);
+}
+
+body h1 {
+  padding-top: 50px;
+  padding-left: 50px;
+  width: 460px;
+  font-size: 54px;
+}
+
+body p {
+  width: 450px;
+  font-size: 25px;
+  padding-left: 50px;
+}
+
+.mouse img {
+  display: block;
+  position: absolute;
+  right: 350px;
+  transform: scale(0.3);
+  }
+.mousebase img {
+  top: 350px;
+}
+
+
+/*=Mouse Cord=*/
+.cord img{
+  top: -829px;
+  right: 232px;
+  cursor: pointer;
+  transition: transform 1s, top 1s;
+  }
+
+#cordbtn {
+    display: none;
+}
+#cordbtn:checked + label > img {
+  transform: scale(0.33);
+  top: -860px;
+}
+.cord img:hover {
+  filter: drop-shadow(0 0 10px white);
+}
+
+
+/*=Left Buttons=*/
+.leftbutton img {
+  top: 560px;
+  right: 656px;
+  cursor: pointer;
+  transition: transform 1s;
+  }
+.leftbutton img:hover {
+  filter: drop-shadow(0 0 10px white);
+}
+#leftbuttonbtn {
+    display: none;
+}
+#leftbuttonbtn:checked + label > img {
+  transform: scale(0.33);
+}
+
+/*=Left Click=*/
+.leftclick img {
+  top: 420px;
+  right: 550px;
+  cursor: pointer;
+  transition: transform 1s;
+}
+.leftclick img:hover {
+  filter: drop-shadow(0 0 10px white);
+}
+#leftclickbtn {
+    display: none;
+}
+#leftclickbtn:checked + label > img {
+  transform: scale(0.33);
+}
+
+/*=Middle Button=*/
+.middlebutton img {
+  top: 697px;
+  right: 599.5px;
+  z-index: 2;
+  cursor: pointer;
+  transition: transform 1s;
+}
+.middlebutton img:hover {
+  filter: drop-shadow(0 0 10px white);
+}
+#middlebuttonbtn {
+    display: none;
+}
+#middlebuttonbtn:checked + label > img {
+  transform: scale(0.33);
+}
+
+/*=Palm Plate=*/
+.palmplate img {
+  top: 641px;
+  right: 389px;
+  z-index: 1;
+  cursor: pointer;
+  transition: transform 1s;
+}
+.palmplate img:hover {
+  filter: drop-shadow(0 0 10px white);
+}
+#palmplatebtn {
+    display: none;
+}
+#palmplatebtn:checked + label > img {
+  transform: scale(0.33);
+}
+
+/*=Right Button=*/
+.rightbutton img {
+  top: 665px;
+  right: 517px;
+  z-index: 2;
+  cursor: pointer;
+  transition: transform 1s;
+}
+.rightbutton img:hover {
+  filter: drop-shadow(0 0 10px white);
+}
+#rightbuttonbtn {
+    display: none;
+}
+#rightbuttonbtn:checked + label > img {
+  transform: scale(0.33);
+}
+
+/*=Right Click=*/
+.rightclick img {
+  top: 415px;
+  right: 449px;
+  z-index: 1;
+  cursor: pointer;
+  transition: transform 1s;
+}
+.rightclick img:hover {
+  filter: drop-shadow(0 0 10px white);
+}
+#rightclickbtn {
+    display: none;
+}
+#rightclickbtn:checked + label > img {
+  transform: scale(0.33);
+}
+
+/*=Right Support=*/
+.rightsupport img {
+  top: 440px;
+  right: 437px;
+  z-index: 0;
+  cursor: pointer;
+  transition: transform 1s;
+}
+.rightsupport img:hover {
+  filter: drop-shadow(0 0 10px white);
+}
+#rightsupportbtn {
+    display: none;
+}
+#rightsupportbtn:checked + label > img {
+  transform: scale(0.33);
+}
+
+/*=Scroll Wheel=*/
+.scrollwheel img {
+  top: 606px;
+  right: 570px;
+  z-index: 2;
+  cursor: pointer;
+  transition: transform 1s;
+}
+.scrollwheel img:hover {
+  filter: drop-shadow(0 0 10px white);
+}
+#scrollwheelbtn {
+    display: none;
+}
+#scrollwheelbtn:checked + label > img {
+  transform: scale(0.33);
+}
+
+
+
+</style>
+
+</head>
+<body>
+
+<h1>The new Overpriced Peripheral is here.</h1>
+<p>A mouse built intentionally for aspiring digital artists who are tired of making art, and instead want to merely be artists.</p>
+
+<div class="mouse">
+
+<div class="mousebase"> <img src="mouse base.PNG" alt="Mouse base or Interior"> </div>
+
+<input type="checkbox" id="cordbtn"/>
+<label class="cord" for="cordbtn"><img src="Cord.PNG" id="btnLeft" /></label>
+
+<input type="checkbox" id="leftbuttonbtn"/>
+<label class="leftbutton" for="leftbuttonbtn"><img src="Left buttons.PNG" id="btnLeft" /></label>
+
+<input type="checkbox" id="leftclickbtn"/>
+<label class="leftclick" for="leftclickbtn"><img src="Left click.PNG" id="btnLeft" /></label>
+
+<input type="checkbox" id="middlebuttonbtn"/>
+<label class="middlebutton" for="middlebuttonbtn"><img src="middle button.PNG" id="btnLeft" /></label>
+
+<input type="checkbox" id="palmplatebtn"/>
+<label class="palmplate" for="palmplatebtn"><img src="palm plate.PNG" id="btnLeft" /></label>
+
+<input type="checkbox" id="rightbuttonbtn"/>
+<label class="rightbutton" for="rightbuttonbtn"><img src="right button.PNG" id="btnLeft" /></label>
+
+<input type="checkbox" id="rightclickbtn"/>
+<label class="rightclick" for="rightclickbtn"><img src="right click.PNG" id="btnLeft" /></label>
+
+<input type="checkbox" id="rightsupportbtn"/>
+<label class="rightsupport" for="rightsupportbtn"><img src="right support.PNG" id="btnLeft" /></label>
+
+<input type="checkbox" id="scrollwheelbtn"/>
+<label class="scrollwheel" for="scrollwheelbtn"><img src="scroll wheel.PNG" id="btnLeft" /></label>
+</div>
+
+
+
+<script>
+
+
+</script>
+
+
+</body>
+</html> 
+
