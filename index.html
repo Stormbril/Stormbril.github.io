@@ -6,202 +6,27 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<link rel="stylesheet" type="text/css" href="styles/mouse-styles.css">
+
 <style>
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    background: rgb(30,30,30);
-}
-
-body h1 {
-    padding-top: 50px;
-    padding-left: 50px;
-    width: 460px;
-    font-size: 54px;
-}
-
-body p {
-    width: 450px;
-    font-size: 25px;
-    padding-left: 50px;
-}
-
-.mouse img {
-    display: block;
-    position: absolute;
-    right: 350px;
-    transform: scale(0.3);
-}
-.mousebase img {
-    top: 350px;
-}
-
-
-/*=Mouse Cord=*/
-.cord img{
-    top: -829px;
-    right: 232px;
-    cursor: pointer;
-    transition: transform 1s, top 1s;
-}
-
-#cordbtn {
-        display: none;
-}
-#cordbtn:checked + label > img {
-    transform: scale(0.33);
-    top: -860px;
-}
-.cord img:hover {
-    filter: drop-shadow(0 0 10px white);
-}
-
-
-/*=Left Buttons=*/
-.leftbutton img {
-    top: 560px;
-    right: 656px;
-    cursor: pointer;
-    transition: transform 1s;
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        background: rgb(30,30,30);
     }
-.leftbutton img:hover {
-    filter: drop-shadow(0 0 10px white);
-}
-#leftbuttonbtn {
-        display: none;
-}
-#leftbuttonbtn:checked + label > img {
-    transform: scale(0.33);
-}
 
-/*=Left Click=*/
-.leftclick img {
-    top: 420px;
-    right: 550px;
-    cursor: pointer;
-    transition: transform 1s;
-}
-.leftclick img:hover {
-    filter: drop-shadow(0 0 10px white);
-}
-#leftclickbtn {
-        display: none;
-}
-#leftclickbtn:checked + label > img {
-    transform: scale(0.33);
-}
+    body h1 {
+        padding-top: 50px;
+        padding-left: 50px;
+        width: 460px;
+        font-size: 54px;
+    }
 
-/*=Middle Button=*/
-.middlebutton img {
-    top: 697px;
-    right: 599.5px;
-    z-index: 2;
-    cursor: pointer;
-    transition: transform 1s;
-}
-.middlebutton img:hover {
-    filter: drop-shadow(0 0 10px white);
-}
-#middlebuttonbtn {
-        display: none;
-}
-#middlebuttonbtn:checked + label > img {
-    transform: scale(0.33);
-}
-
-/*=Palm Plate=*/
-.palmplate img {
-    top: 641px;
-    right: 389px;
-    z-index: 1;
-    cursor: pointer;
-    transition: transform 1s;
-}
-.palmplate img:hover {
-    filter: drop-shadow(0 0 10px white);
-}
-#palmplatebtn {
-        display: none;
-}
-#palmplatebtn:checked + label > img {
-    transform: scale(0.33);
-}
-
-/*=Right Button=*/
-.rightbutton img {
-    top: 665px;
-    right: 517px;
-    z-index: 2;
-    cursor: pointer;
-    transition: transform 1s;
-}
-.rightbutton img:hover {
-    filter: drop-shadow(0 0 10px white);
-}
-#rightbuttonbtn {
-        display: none;
-}
-#rightbuttonbtn:checked + label > img {
-    transform: scale(0.33);
-}
-
-/*=Right Click=*/
-.rightclick img {
-    top: 415px;
-    right: 449px;
-    z-index: 1;
-    cursor: pointer;
-    transition: transform 1s;
-}
-.rightclick img:hover {
-    filter: drop-shadow(0 0 10px white);
-}
-#rightclickbtn {
-        display: none;
-}
-#rightclickbtn:checked + label > img {
-    transform: scale(0.33);
-}
-
-/*=Right Support=*/
-.rightsupport img {
-    top: 440px;
-    right: 437px;
-    z-index: 0;
-    cursor: pointer;
-    transition: transform 1s;
-}
-.rightsupport img:hover {
-    filter: drop-shadow(0 0 10px white);
-}
-#rightsupportbtn {
-        display: none;
-}
-#rightsupportbtn:checked + label > img {
-    transform: scale(0.33);
-}
-
-/*=Scroll Wheel=*/
-.scrollwheel img {
-    top: 606px;
-    right: 570px;
-    z-index: 2;
-    cursor: pointer;
-    transition: transform 1s;
-}
-.scrollwheel img:hover {
-    filter: drop-shadow(0 0 10px white);
-}
-#scrollwheelbtn {
-        display: none;
-}
-#scrollwheelbtn:checked + label > img {
-    transform: scale(0.33);
-}
-
-
-
+    body p {
+        width: 450px;
+        font-size: 25px;
+        padding-left: 50px;
+    }
 </style>
 
 </head>
