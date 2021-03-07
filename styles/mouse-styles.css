@@ -29,7 +29,7 @@
 }
 
 #leftbuttonbtn {
-        display: none;
+    display: none;
 }
 
 #leftbuttonbtn:checked + label > img {
@@ -53,7 +53,7 @@
 }
 
 #leftclickbtn {
-        display: none;
+    display: none;
 }
 
 #leftclickbtn:checked + label > img {
@@ -102,7 +102,7 @@
 }
 
 #middlebuttonbtn {
-        display: none;
+    display: none;
 }
 
 #middlebuttonbtn:checked + label > img {
@@ -127,7 +127,7 @@
 }
 
 #palmplatebtn {
-        display: none;
+    display: none;
 }
 
 #palmplatebtn:checked + label > img {
@@ -151,7 +151,7 @@
 }
 
 #rightbuttonbtn {
-        display: none;
+    display: none;
 }
 
 #rightbuttonbtn:checked + label > img {
@@ -175,7 +175,7 @@
 }
 
 #rightclickbtn {
-        display: none;
+    display: none;
 }
 
 #rightclickbtn:checked + label > img {
@@ -199,7 +199,7 @@
 }
 
 #rightsupportbtn {
-        display: none;
+    display: none;
 }
 
 #rightsupportbtn:checked + label > img {
@@ -223,7 +223,7 @@
 }
 
 #scrollwheelbtn {
-        display: none;
+    display: none;
 }
 
 #scrollwheelbtn:checked + label > img {
