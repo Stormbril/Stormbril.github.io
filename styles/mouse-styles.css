@@ -8,7 +8,7 @@
     right: 350px;
     transform: scale(0.3);
 }
-.mousebase img {
+.mouse-base img {
     top: 350px;
 }
 
@@ -17,14 +17,14 @@
 	----- Left Button ----- 
 */
 
-.leftbutton img {
+.left-button img {
     top: 560px;
     right: 656px;
     cursor: pointer;
     transition: transform 1s;
 }
 
-.leftbutton img:hover {
+.left-button img:hover {
     filter: drop-shadow(0 0 10px white);
 }
 
@@ -41,14 +41,14 @@
 	----- Left Click ----- 
 */
 
-.leftclick img {
+.left-click img {
     top: 420px;
     right: 550px;
     cursor: pointer;
     transition: transform 1s;
 }
 
-.leftclick img:hover {
+.left-click img:hover {
     filter: drop-shadow(0 0 10px white);
 }
 
@@ -89,7 +89,7 @@
 	----- Middle Button -----
 */
 
-.middlebutton img {
+.middle-button img {
     top: 697px;
     right: 599.5px;
     z-index: 2;
@@ -97,7 +97,7 @@
     transition: transform 1s;
 }
 
-.middlebutton img:hover {
+.middle-button img:hover {
     filter: drop-shadow(0 0 10px white);
 }
 
@@ -114,7 +114,7 @@
 	----- Palm Plate -----
 */
 
-.palmplate img {
+.palm-plate img {
     top: 641px;
     right: 389px;
     z-index: 1;
@@ -122,7 +122,7 @@
     transition: transform 1s;
 }
 
-.palmplate img:hover {
+.palm-plate img:hover {
     filter: drop-shadow(0 0 10px white);
 }
 
@@ -138,7 +138,7 @@
 	----- Right Button -----
 */
 
-.rightbutton img {
+.right-button img {
     top: 665px;
     right: 517px;
     z-index: 2;
@@ -146,7 +146,7 @@
     transition: transform 1s;
 }
 
-.rightbutton img:hover {
+.right-button img:hover {
     filter: drop-shadow(0 0 10px white);
 }
 
@@ -162,7 +162,7 @@
 	----- Right Click -----
 */
 
-.rightclick img {
+.right-click img {
     top: 415px;
     right: 449px;
     z-index: 1;
@@ -170,7 +170,7 @@
     transition: transform 1s;
 }
 
-.rightclick img:hover {
+.right-click img:hover {
     filter: drop-shadow(0 0 10px white);
 }
 
@@ -186,7 +186,7 @@
 	----- Right Support -----
 */
 
-.rightsupport img {
+.right-support img {
     top: 440px;
     right: 437px;
     z-index: 0;
@@ -194,7 +194,7 @@
     transition: transform 1s;
 }
 
-.rightsupport img:hover {
+.right-support img:hover {
     filter: drop-shadow(0 0 10px white);
 }
 
@@ -210,7 +210,7 @@
 	----- Scroll Wheel -----
 */
 
-.scrollwheel img {
+.scroll-wheel img {
     top: 606px;
     right: 570px;
     z-index: 2;
@@ -218,7 +218,7 @@
     transition: transform 1s;
 }
 
-.scrollwheel img:hover {
+.scroll-wheel img:hover {
     filter: drop-shadow(0 0 10px white);
 }
 
