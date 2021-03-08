@@ -1,0 +1,231 @@
+/* 
+	----- Main Mouse Styles ----- 
+*/
+
+.mouse img {
+    display: block;
+    position: absolute;
+    right: 350px;
+    transform: scale(0.3);
+}
+.mouse-base img {
+    top: 350px;
+}
+
+
+/* 
+	----- Left Button ----- 
+*/
+
+.left-button img {
+    top: 560px;
+    right: 656px;
+    cursor: pointer;
+    transition: transform 1s;
+}
+
+.left-button img:hover {
+    filter: drop-shadow(0 0 10px white);
+}
+
+#leftbuttonbtn {
+    display: none;
+}
+
+#leftbuttonbtn:checked + label > img {
+    transform: scale(0.33);
+}
+
+
+/* 
+	----- Left Click ----- 
+*/
+
+.left-click img {
+    top: 420px;
+    right: 550px;
+    cursor: pointer;
+    transition: transform 1s;
+}
+
+.left-click img:hover {
+    filter: drop-shadow(0 0 10px white);
+}
+
+#leftclickbtn {
+    display: none;
+}
+
+#leftclickbtn:checked + label > img {
+    transform: scale(0.33);
+}
+
+/* 
+	----- Mouse Cord ----- 
+*/
+
+.cord img{
+  top: -829px;
+  right: 232px;
+  cursor: pointer;
+  transition: transform 1s, top 1s;
+  }
+
+#cordbtn {
+    display: none;
+}
+
+#cordbtn:checked + label > img {
+  transform: scale(0.33);
+  top: -860px;
+}
+
+.cord img:hover {
+  filter: drop-shadow(0 0 10px white);
+}
+
+
+/*
+	----- Middle Button -----
+*/
+
+.middle-button img {
+    top: 697px;
+    right: 599.5px;
+    z-index: 2;
+    cursor: pointer;
+    transition: transform 1s;
+}
+
+.middle-button img:hover {
+    filter: drop-shadow(0 0 10px white);
+}
+
+#middlebuttonbtn {
+    display: none;
+}
+
+#middlebuttonbtn:checked + label > img {
+    transform: scale(0.33);
+}
+
+
+/*
+	----- Palm Plate -----
+*/
+
+.palm-plate img {
+    top: 641px;
+    right: 389px;
+    z-index: 1;
+    cursor: pointer;
+    transition: transform 1s;
+}
+
+.palm-plate img:hover {
+    filter: drop-shadow(0 0 10px white);
+}
+
+#palmplatebtn {
+    display: none;
+}
+
+#palmplatebtn:checked + label > img {
+    transform: scale(0.33);
+}
+
+/*
+	----- Right Button -----
+*/
+
+.right-button img {
+    top: 665px;
+    right: 517px;
+    z-index: 2;
+    cursor: pointer;
+    transition: transform 1s;
+}
+
+.right-button img:hover {
+    filter: drop-shadow(0 0 10px white);
+}
+
+#rightbuttonbtn {
+    display: none;
+}
+
+#rightbuttonbtn:checked + label > img {
+    transform: scale(0.33);
+}
+
+/*
+	----- Right Click -----
+*/
+
+.right-click img {
+    top: 415px;
+    right: 449px;
+    z-index: 1;
+    cursor: pointer;
+    transition: transform 1s;
+}
+
+.right-click img:hover {
+    filter: drop-shadow(0 0 10px white);
+}
+
+#rightclickbtn {
+    display: none;
+}
+
+#rightclickbtn:checked + label > img {
+    transform: scale(0.33);
+}
+
+/*
+	----- Right Support -----
+*/
+
+.right-support img {
+    top: 440px;
+    right: 437px;
+    z-index: 0;
+    cursor: pointer;
+    transition: transform 1s;
+}
+
+.right-support img:hover {
+    filter: drop-shadow(0 0 10px white);
+}
+
+#rightsupportbtn {
+    display: none;
+}
+
+#rightsupportbtn:checked + label > img {
+    transform: scale(0.33);
+}
+
+/*
+	----- Scroll Wheel -----
+*/
+
+.scroll-wheel img {
+    top: 606px;
+    right: 570px;
+    z-index: 2;
+    cursor: pointer;
+    transition: transform 1s;
+}
+
+.scroll-wheel img:hover {
+    filter: drop-shadow(0 0 10px white);
+}
+
+#scrollwheelbtn {
+    display: none;
+}
+
+#scrollwheelbtn:checked + label > img {
+    transform: scale(0.33);
+}
