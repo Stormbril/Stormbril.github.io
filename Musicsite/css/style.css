@@ -7,8 +7,8 @@
   position: absolute;
   left: 0px;
   top: 0px;
-  width: 300px;
-  height: 300px;
+  width: 123px;
+  height: 262px;
   background-color: rgba(0,0,0,0);
   margin: 0px;
   border: 0px solid black;
@@ -22,27 +22,23 @@
 .ap-controls .ap-navigation .ap-togglePlay{
   display: block;
   background: url("https://www.worldanvil.com/uploads/images/4601c846268ed8acbfaa1ea299133075.png") no-repeat;
-  background-position: center;
+  background-origin: padding-box;
+  background-position: left top;
   border: none;
-  width: 300px;
-  height: 300px;
+  width: 123px;
+  height: 262px;
   color: #efac09;
   font-size: 1.25em;
 }
 
 .ap-controls .ap-navigation .ap-back10, .ap-controls .ap-navigation .ap-skip10 {
   display: none;
-  background: transparent;
-  border: none;
-  min-width: 30px;
-  color: #A57706;
-  font-size: 1.25em;
 }
 
 .ap-controls .ap-navigation .ap-togglePlay:hover{
   color: #efac09;
   background: url("https://www.worldanvil.com/uploads/images/8c0e66af029525691299fc8f46d5d6f7.png") no-repeat;
-  background-position: center;
+  background-position: left top;
   cursor: pointer;
 }
 .ap-controls .ap-navigation .ap-togglePlay:active{
