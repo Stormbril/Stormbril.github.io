@@ -4,30 +4,23 @@
 }
 
 .audio {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 300px;
+  height: 300px;
   background-color: rgba(0,0,0,0);
-  width: 10%;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0px;
   border: 0px solid black;
-  padding-top: 0px;
+  padding: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
   -webkit-border-radius: 0px;
   border-radius: 0px;
-  background-clip: padding-box;
 }
 
-.ap-controls {
-  margin: 5px;
-  text-align: center;
-  width: 100%;
-}
-.ap-controls .ap-navigation {
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  display: inline;
-}
 .ap-controls .ap-navigation .ap-togglePlay{
-  display: inline-block;
+  display: block;
   background: url("https://www.worldanvil.com/uploads/images/4601c846268ed8acbfaa1ea299133075.png") no-repeat;
   background-position: center;
   border: none;
@@ -46,37 +39,28 @@
   font-size: 1.25em;
 }
 
-.ap-controls .ap-navigation .ap-togglePlay:hover, .ap-controls .ap-navigation .ap-back10:hover, .ap-controls .ap-navigation .ap-skip10:hover {
+.ap-controls .ap-navigation .ap-togglePlay:hover{
   color: #efac09;
   background: url("https://www.worldanvil.com/uploads/images/8c0e66af029525691299fc8f46d5d6f7.png") no-repeat;
   background-position: center;
   cursor: pointer;
 }
+.ap-controls .ap-navigation .ap-togglePlay:active{
+  transform: scale(1.05);
+}
+
 
 .ap-scrubberContainer {
   display: none;
-  width: 90%;
-  height: 5px;
-  margin: 0 auto;
-  background-color: #819090;
 }
 .ap-scrubberContainer .ap-scrubberMouseover {
-  height: 5px;
-  position: relative;
-  bottom: 18px;
-  background-color: rgba(165, 119, 6, 0.3);
   display: none;
 }
 .ap-scrubberContainer .ap-scrubberBar {
   display: none;
-  width: 100%;
 }
 .ap-scrubberContainer .ap-scrubberBar .ap-scrubber {
-  display: inline-block;
-  text-align: center;
-  height: 5px;
-  color: #A57706;
-  background-color: #A57706;
+  display: none;
 }
 
 
