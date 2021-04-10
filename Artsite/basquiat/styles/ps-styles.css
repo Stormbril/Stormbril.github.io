@@ -1,6 +1,6 @@
 .art_layers {
 	width: 800px;
-	height: 534px;
+	height: 635px;
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -11,7 +11,7 @@
 .art_layers img {
 	position: absolute;
 	max-width: 800px;
-	max-height: 534px;
+	max-height: 635px;
 	float: left;
 	
 }
@@ -65,7 +65,7 @@
 .no_tools_access {
 	float: right;
 	left: 300px;
-	width: 450px;
+	width: 475px;
 	height: 65px;
 	display: none;
 	position: absolute;
@@ -171,7 +171,7 @@
 
 .ps_background {
 	width: 800px;
-	height: 534px;
+	height: 635px;
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -394,7 +394,7 @@
 }
 #basewhite_art {
 	width: 800px;
-	height: 534px;
+	height: 635px;
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -403,7 +403,7 @@
 }
 #basegray_art {
 	width: 800px;
-	height: 534px;
+	height: 635px;
 	position: absolute;
 	left: 50%;
 	top: 50%;
