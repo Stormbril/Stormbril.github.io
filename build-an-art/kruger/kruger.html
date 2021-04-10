@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Build-an-Art™</title>
+<script src="https://kit.fontawesome.com/97175dc49e.js" crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" type="text/css" href="styles/ps-styles.css">
+
+<style>
+
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        background: rgb(40,40,40);
+    }
+
+    body p {
+        width: 450px;
+        font-size: 25px;
+        padding-left: 50px;
+    }
+    html, body {
+        max-width: 100%;
+        max-height: 100%;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        padding: 0;
+        margin: 0;
+    }
+
+    #backdrop {
+        background: url(https://images.unsplash.com/photo-1495940178561-60ecb2447b0e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2700&q=80);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        filter: blur(2px);
+        z-index: -10;
+        cursor: wait;
+    }
+
+    @keyframes loadin {
+        0% {opacity: 0%; z-index: 0;}
+        1% {z-index: 10}
+        100% {opacity: 100%; z-index: 10}
+    }
+
+    .photoshop {
+        opacity: 0%;
+        animation-name: loadin;
+        animation-delay: 1s;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        background: rgb(40,40,40);
+    }
+
+    #psbackdrop {
+        background: rgb(40,40,40);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 0;
+    }
+</style>
+
+</head>
+
+<body>
+<script type="text/javascript">
+    function toggle_art(event) {
+        let actualName = event.id
+        let segments = actualName.split('_')
+        let artElement = document.getElementById(segments[0] + '_art')
+          if (artElement.style.display === "none") {
+            artElement.style.display = "block";
+            } else {
+            artElement.style.display = "none";
+            }
+    }
+</script>
+<script type="text/javascript">
+    function toggle_colour(event) {
+        let actualName = event.id
+        let clickedEye = document.getElementById(actualName)
+        if (clickedEye.style.color === "white") {
+            clickedEye.style.color = "gray";
+        } else {
+            clickedEye.style.color = "white"
+        }
+    }
+</script>
+
+
+<div id="backdrop"></div>
+<div class="photoshop">
+<div id="psbackdrop"></div>
+        <div class="ps_main_header">
+
+            <div class="ps_main_header_left">
+                <img src="elements/ps_main_header_left.png" alt="Left portion of header bar (file, edit, etc)" />
+            </div>
+            <div class="no_options_access">
+                <p>Your free trial does not include access to File, Edit, or other header bar options. Please purchase the full version of the program (We accept personal favours, US dollars, bitcoin, or immortal souls as payment) for full access. </p>
+            </div>
+            <div class="ps_main_header_right">
+                <img src="elements/ps_main_header_right.png" alt="right portion of header bar (window controls)" />
+            </div>
+            <div class="no_exit_access">
+                <p>There is no exit. There is no escape.</p>
+            </div>
+
+        </div>
+
+    <div class="wrapper">
+    <div class="layers">
+            <img src="elements/ps_colourwheel.png" alt="Colour wheel editor section" id="colourwheel" />
+                <div class="no_colours_access">
+                <p>Sadly, regrettably, and unfoundly unfortunately colours are locked behind a paywall and several layers of bulletproof, heatproof, non-conductive concrete. Please send every key you own in an unmarked envelope to unlock the colour wheel.</p>
+            </div>
+            <div class="ps_properties">
+                  <img src="elements/ps_properties.png" alt="Properties and layers section" />
+
+
+                    <div class="layer_lines_chaos">
+                        <div id="lineschaos_control" onclick="toggle_art(this); return false;">
+                            <i class="fas fa-eye" id="eyecon1" onclick="toggle_colour(this); return false;"></i>
+                        </div>
+                        <div class="miniart">
+                            <img src="elements/layers/lines_chaos.png" alt="Linework in a chaotic array" />
+                        </div>
+                            <p>Lines_Chaos</p>
+                    </div>
+
+                    <div class="layer_shapes_ordered">
+                        <div id="shapesordered_control" onclick="toggle_art(this); return false;">
+                            <i class="fas fa-eye" id="eyecon2" onclick="toggle_colour(this); return false;"></i>
+                        </div>
+                        <div class="miniart">
+                            <img src="elements/layers/shapes_ordered.png" alt="Shapes aligned in an ordered manner" />
+                        </div>
+                            <p>Shapes_Ordered</p>
+                    </div>
+
+                    <div class="layer_colour_chaos">
+                        <div id="colourchaos_control" onclick="toggle_art(this); return false;">
+                            <i class="fas fa-eye" id="eyecon3" onclick="toggle_colour(this); return false;"></i>
+                        </div>
+                        <div class="miniart">
+                            <img src="elements/layers/colour_chaos.png" alt="Colours chaotically applied" />
+                        </div>
+                            <p>Colour_Chaos</p>
+                     </div>
+
+                    <div class="layer_colour_ordered">
+                        <div id="colourordered_control" onclick="toggle_art(this); return false;">
+                            <i class="fas fa-eye" id="eyecon4" onclick="toggle_colour(this); return false;"></i>
+                        </div>
+                        <div class="miniart">
+                            <img src="elements/layers/colour_ordered.png" alt="Colours ordered as intended" />
+                        </div>
+                            <p>Colour_Ordered</p>
+                    </div>
+
+                    <div class="layer_shapes_chaos">
+                        <div id="shapeschaos_control" onclick="toggle_art(this); return false;">
+                            <i class="fas fa-eye" id="eyecon5" onclick="toggle_colour(this); return false;"></i>
+                        </div>
+                        <div class="miniart">
+                            <img src="elements/layers/shapes_chaos.png" alt="Shapes aligned in chaos" />
+                        </div>
+                            <p>Shapes_Chaos</p>
+                    </div>
+
+                    <div class="layer_lines_ordered">
+                        <div id="linesordered_control" onclick="toggle_art(this); return false;">
+                            <i class="fas fa-eye" id="eyecon6" onclick="toggle_colour(this); return false;"></i>
+                        </div>
+                        <div class="miniart">
+                            <img src="elements/layers/lines_ordered.png" alt="Linework ordered in a regular manner" />
+                        </div>
+                            <p>Lines_Ordered</p>
+                    </div>
+
+                    <div class="layer_base_white">
+                        <div id="basewhite_control" onclick="toggle_art(this); return false;">
+                            <i class="fas fa-eye" id="eyecon7" onclick="toggle_colour(this); return false;"></i>
+                        </div>
+                        <div class="miniartwhite">
+                        </div>
+                            <p>Background_White</p>
+                    </div>
+
+                    <div class="layer_base_gray">
+                        <div id="basegray_control" onclick="toggle_art(this); return false;">
+                            <i class="fas fa-eye" id="eyecon8" onclick="toggle_colour(this); return false;"></i>
+                        </div>
+                        <div class="miniartgray">
+                        </div>
+                            <p>Background_Gray</p>
+                    </div>
+             </div>
+        <div id="adtalk"> 
+        <h1>Hate ads? We do too! Buy the full experience to remove them.</h1>
+        </div>
+        <a href="https://stormbril.github.io/">
+            <img id="advert" src="elements/ps_advert.png" alt="advert link to the overpriced peripheral page">
+        </a>      
+    </div>
+    </div>
+    <div class="ps_tools">
+        <img src="elements/ps_tools.png" alt="tools on left side of window" />
+    </div>
+    <div class="no_tools_access">
+        <p>We are sorry to inform you that the free trial does not include access to tools. Please refer only to the layers options. For full access to all tools this program has to offer, purchase the full program and additional TOOLS DLC for only $999.99. </p>
+    </div>
+
+    <div class="ps_tabs_header">
+        <img src="elements/ps_tabs_header.png" alt="tabs menu of opened drawings" />
+     </div>
+
+    <div class="ps_footer">
+        <img src="elements/ps_footer.png" alt="footer with info that is definitely not needed" />
+    </div>
+
+    <div class="art_layers">
+
+            <div id="basegray_art" style="display: none;">
+            </div>
+
+            <div id="basewhite_art" style="display: none;">
+            </div>
+
+            <div id="linesordered_art" style="display: none;">
+                <img src="elements/layers/lines_ordered.png" alt="Linework ordered in a regular manner" />
+            </div>
+
+            <div id="shapeschaos_art" style="display: none;">
+                <img src="elements/layers/shapes_chaos.png" alt="Shapes aligned in chaos" />
+            </div>
+
+            <div id="colourordered_art" style="display: none;">
+                <img src="elements/layers/colour_ordered.png" alt="Colours ordered as intended" />
+            </div>
+
+             <div id="colourchaos_art" style="display: none;">
+                <img src="elements/layers/colour_chaos.png" alt="Colours chaotically applied" />
+            </div>  
+
+            <div id="shapesordered_art" style="display: none;">
+                <img src="elements/layers/shapes_ordered.png" alt="Shapes aligned in an ordered manner" />
+            </div>  
+
+            <div id="lineschaos_art" style="display: none;">
+                <img src="elements/layers/lines_chaos.png" alt="Linework in a chaotic array" />
+            </div>
+
+    </div>
+
+    <div class="ps_background">
+    </div>
+
+</div>
+
+</body>
+</html>
