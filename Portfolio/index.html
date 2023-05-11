@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Devon Ruscheinski | Art and Architecture</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background-size: cover;
+    }
+    html, body {
+    max-width: 100%;
+    max-height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    }
+
+    #architecture {
+        background: #96bd88;
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 1;
+        border-right: 5px solid white;
+        transition: all 0.5s;
+
+    }
+    #worldbuilding {
+        background: #725f7b;
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        z-index: 1;
+        border-left: 5px solid white;
+        transition: all 0.5s;
+    }
+    .button {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        height: 100px;
+        font-size: 34px;
+        padding: 20px;
+    }
+    .archibutton {
+        background: black;
+        color: white;
+    }
+    .worldbutton {
+        background: white;
+    }
+    #header {
+        display: inline-block;
+        z-index: 10;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        padding-left: 20px;
+    }
+    #header h1 {
+        font-size: 24px;
+        color: white;
+    }
+    #header .headertext {
+        display: inline-block;
+    }
+    #header .name {
+        border: 2px solid;
+        padding: 5px;
+    }
+    #header .midbreak {
+        margin: 0px;
+    }
+</style>
+</head>
+<body>
+    <div id="header">
+        <h1> <section class="headertext name Devon">Devon Ruscheinski</section><section class="headertext midbreak">|</section><section class="headertext name Stormbril">Stormbril</section> </h1>
+        
+    </div>
+    <div id="architecture">
+        <button id="archibutton" class="button archibutton">Architecture</button>
+        <div id="projects_sidebar">
+             <div id="project1">
+        
+            </div>    
+             <div id="project2">
+        
+            </div>    
+             <div id="project3">
+        
+            </div>    
+             <div id="project4">
+        
+            </div>    
+             <div id="project5">
+        
+            </div>    
+             <div id="project6">
+        
+            </div>    
+             <div id="project7">
+        
+            </div>    
+             <div id="project8">
+        
+            </div>    
+             <div id="project9">
+        
+            </div>    
+             <div id="project10">
+        
+            </div>    
+        </div>
+        <div id="projects_info">
+             <div id="projectinfo1">
+        
+            </div>    
+             <div id="projectinfo2">
+        
+            </div>    
+             <div id="projectinfo3">
+        
+            </div>    
+             <div id="projectinfo4">
+        
+            </div>    
+             <div id="projectinfo5">
+        
+            </div>    
+             <div id="projectinfo6">
+        
+            </div>    
+             <div id="projectinfo7">
+        
+            </div>    
+             <div id="projectinfo8">
+        
+            </div>    
+             <div id="projectinfo9">
+        
+            </div>    
+             <div id="projectinfo10">
+        
+            </div>    
+        
+        </div> 
+    </div>
+    <div id="worldbuilding"> 
+        <button id="worldbutton" class="button worldbutton">Worldbuilding</button>
+        <div id="wbpage1">
+        
+        </div>
+        <div id="wbpage2">
+        
+        </div>
+        <div id="wbpage3">
+        
+        </div>
+        <div id="wbpage4">
+        
+        </div>
+        <div id="wbpage5">
+        
+        </div>
+        <div id="wbpage6">
+        
+        </div>
+        <div id="wbpage7">
+        
+        </div>
+        <div id="wbpage8">
+        
+        </div>
+        <div id="wbpage9">
+        
+        </div>
+        <div id="wbpage10">
+        
+        </div>
+    </div>
+<script>
+    //setup shit
+    const archDiv = document.getElementById("architecture");
+    const worldDiv = document.getElementById("worldbuilding");
+    const archBtn = document.getElementById("archibutton");
+    const worldBtn = document.getElementById("worldbutton");
+    var archActive = false;
+    var worldActive = false;
+    const activeWidth = "100%";
+    const defaultWidth = "50%";
+    const inactiveWidth = "0%"
+
+    function togglePanelWidths() {
+        if (archActive) {
+            archDiv.style.width = activeWidth;
+            worldDiv.style.width = inactiveWidth;
+        } else if (worldActive) {
+            archDiv.style.width = inactiveWidth;
+            worldDiv.style.width = activeWidth;
+        } else {
+            archDiv.style.width = defaultWidth;
+            worldDiv.style.width = defaultWidth;
+        }
+    }
+
+    function showArchitecturePanelToggle() {
+        archActive = !archActive;
+        worldBtn.hidden = archActive;
+        worldActive = false;     
+        togglePanelWidths();
+    }
+
+    function showWorldbuildingPanelToggle() {
+        worldActive = !worldActive;
+        archBtn.hidden = worldActive;
+        archActive = false;
+        togglePanelWidths();
+    }
+
+    //script functions
+    archBtn.onclick = function () {
+        showArchitecturePanelToggle();
+    };
+
+    worldBtn.onclick = function () {
+        showWorldbuildingPanelToggle();
+    };
+</script>
+</body>
+</html>
