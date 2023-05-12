@@ -28,7 +28,12 @@
         z-index: 1;
         border-right: 5px solid white;
         transition: all 0.5s;
-
+    }
+    #architecture:hover {
+        background: #a2e68a;
+    }
+    #architecture.focusDiv {
+        background: white;
     }
     #worldbuilding {
         background: #725f7b;
@@ -41,49 +46,119 @@
         border-left: 5px solid white;
         transition: all 0.5s;
     }
+    #worldbuilding:hover {
+        background: #9e6eb5;
+    }
+    #worldbuilding.focusDiv {
+        background: black;
+    }
     .button {
         position: absolute;
+        display: block;
         left: 50%;
         top: 50%;
         transform: translate(-50%,-50%);
-        height: 100px;
+        height: 100%;
+        width: 100%;
         font-size: 34px;
         padding: 20px;
+        background: none;
+        border: none;
+        transition: all 0.5s;
+        z-index: 10;
     }
     .archibutton {
-        background: black;
-        color: white;
+        color: black;
+    }
+    .archibutton.activated {
+        width: 419px;
     }
     .worldbutton {
-        background: white;
+        color: white;
+    }
+    .worldbutton.activated {
+        width: 462px;
+    }
+    .button.activated {
+        left: 0px;
+        top: -10px;
+        margin-top: 30px;
+        margin-left: 5px;
+        transform: none;
+        border: none;
+        font-size: 48px;
+        letter-spacing: 10px;
+        height: 90px;
+        transition: all 0.5s;
+        display: block;
+        z-index: 10;
     }
     #header {
         display: inline-block;
-        z-index: 10;
+        z-index: 2;
         position: absolute;
         top: 0px;
         left: 0px;
         padding-left: 20px;
+        transition: 0.5s;
+        height: 50px;
     }
     #header h1 {
         font-size: 24px;
+        color: black;
+        z-index: 2;
+    }
+    #header.activeWorldbuild h1{
         color: white;
+        z-index: 2;
     }
     #header .headertext {
         display: inline-block;
+        transition: all 0.5s;
+        overflow: hidden;
+        z-index: 2;
     }
+    .innertext {
+        transition: all 0.5s;
+    }
+    #header .headertext.name.retracted{
+        transition: all 0.5s;
+    }
+    #header.activeArchitecture .Stormbril .innertext{
+        transition: all 0.5s;
+        position: relative;
+        transform: translateX(-120px);
+    }
+    #header.activeWorldbuild .Devon .innertext{
+        transition: all 0.5s;
+        position: relative;
+        transform: translateX(240px);
+    }
+
     #header .name {
-        border: 2px solid;
         padding: 5px;
+        z-index: 2;
     }
     #header .midbreak {
         margin: 0px;
+        font-size: 36px;
+        z-index: 2;
+    }
+    #header.activeArchitecture .headertext.midbreak,
+    #header.activeWorldbuild .headertext.midbreak {
+        transition-delay: 0.25s;
+        transform: scaleY(0);
+    }
+    #header.activeWorldbuild {
+        transition: 0.5s;
+        transform: translateX(-240px);
+        z-index: 2;
     }
 </style>
 </head>
 <body>
     <div id="header">
-        <h1> <section class="headertext name Devon">Devon Ruscheinski</section><section class="headertext midbreak">|</section><section class="headertext name Stormbril">Stormbril</section> </h1>
+        <h1> <section id="headerDevon" class="headertext name Devon"><section class="innertext">Devon Ruscheinski</section></section><section id="headerPipe" class="headertext midbreak">|</section><section id="headerStormbril" class="headertext name Stormbril"><section class="innertext">Stormbril</section></section> </h1>
         
     </div>
     <div id="architecture">
@@ -193,6 +268,7 @@
     const worldDiv = document.getElementById("worldbuilding");
     const archBtn = document.getElementById("archibutton");
     const worldBtn = document.getElementById("worldbutton");
+    const headerAll = document.getElementById("header");
     var archActive = false;
     var worldActive = false;
     const activeWidth = "100%";
@@ -215,8 +291,11 @@
     function showArchitecturePanelToggle() {
         archActive = !archActive;
         worldBtn.hidden = archActive;
-        worldActive = false;     
+        worldActive = false;   
         togglePanelWidths();
+        archBtn.classList.toggle("activated");
+        headerAll.classList.toggle("activeArchitecture");
+        archDiv.classList.toggle("focusDiv");
     }
 
     function showWorldbuildingPanelToggle() {
@@ -224,6 +303,9 @@
         archBtn.hidden = worldActive;
         archActive = false;
         togglePanelWidths();
+        worldBtn.classList.toggle("activated");
+        headerAll.classList.toggle("activeWorldbuild");
+        worldDiv.classList.toggle("focusDiv");
     }
 
     //script functions
