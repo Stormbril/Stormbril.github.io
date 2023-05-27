@@ -6,316 +6,670 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-    body {
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    background-size: cover;
-    }
-    html, body {
-    max-width: 100%;
-    max-height: 100%;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    }
+	body {
+	font-family: Arial, Helvetica, sans-serif;
+	color: white;
+	background-size: cover;
+	}
+	html, body {
+	max-width: 100%;
+	max-height: 100%;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	}
 
-    #architecture {
-        background: #96bd88;
-        width: 50%;
-        height: 100%;
-        position: absolute;
-        left: 0px;
-        top: 0px;
-        z-index: 1;
-        border-right: 5px solid white;
-        transition: all 0.5s;
-    }
-    #architecture:hover {
-        background: #a2e68a;
-    }
-    #architecture.focusDiv {
-        background: white;
-    }
-    #worldbuilding {
-        background: #725f7b;
-        width: 50%;
-        height: 100%;
-        position: absolute;
-        right: 0px;
-        top: 0px;
-        z-index: 1;
-        border-left: 5px solid white;
-        transition: all 0.5s;
-    }
-    #worldbuilding:hover {
-        background: #9e6eb5;
-    }
-    #worldbuilding.focusDiv {
-        background: black;
-    }
-    .button {
-        position: absolute;
-        display: block;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%,-50%);
-        height: 100%;
-        width: 100%;
-        font-size: 34px;
-        padding: 20px;
-        background: none;
-        border: none;
-        transition: all 0.5s;
-        z-index: 10;
-    }
-    .archibutton {
-        color: black;
-    }
-    .archibutton.activated {
-        width: 419px;
-    }
-    .worldbutton {
-        color: white;
-    }
-    .worldbutton.activated {
-        width: 462px;
-    }
-    .button.activated {
-        left: 0px;
-        top: -10px;
-        margin-top: 30px;
-        margin-left: 5px;
-        transform: none;
-        border: none;
-        font-size: 48px;
-        letter-spacing: 10px;
-        height: 90px;
-        transition: all 0.5s;
-        display: block;
-        z-index: 10;
-    }
-    #header {
-        display: inline-block;
-        z-index: 2;
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        padding-left: 20px;
-        transition: 0.5s;
-        height: 50px;
-    }
-    #header h1 {
-        font-size: 24px;
-        color: black;
-        z-index: 2;
-    }
-    #header.activeWorldbuild h1{
-        color: white;
-        z-index: 2;
-    }
-    #header .headertext {
-        display: inline-block;
-        transition: all 0.5s;
-        overflow: hidden;
-        z-index: 2;
-    }
-    .innertext {
-        transition: all 0.5s;
-    }
-    #header .headertext.name.retracted{
-        transition: all 0.5s;
-    }
-    #header.activeArchitecture .Stormbril .innertext{
-        transition: all 0.5s;
-        position: relative;
-        transform: translateX(-120px);
-    }
-    #header.activeWorldbuild .Devon .innertext{
-        transition: all 0.5s;
-        position: relative;
-        transform: translateX(240px);
-    }
+	#architecture {
+		background: #96bd88;
+		width: 50%;
+		height: 100%;
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		z-index: 1;
+		border-right: 5px solid white;
+		transition: all 0.5s;
+	}
+	#architecture:hover {
+		background: #a2e68a;
+	}
+	#architecture.focusDiv {
+		background: white;
+	}
+	#worldbuilding {
+		background: #725f7b;
+		width: 50%;
+		height: 100%;
+		position: absolute;
+		right: 0px;
+		top: 0px;
+		z-index: 1;
+		border-left: 5px solid white;
+		transition: all 0.5s;
+	}
+	#worldbuilding:hover {
+		background: #9e6eb5;
+	}
+	#worldbuilding.focusDiv {
+		background: black;
+	}
+	.button {
+		position: absolute;
+		display: block;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%,-50%);
+		height: 100%;
+		width: 100%;
+		font-size: 34px;
+		padding: 20px;
+		background: none;
+		border: none;
+		transition: all 0.5s;
+		z-index: 10;
+	}
+	.archibutton {
+		color: black;
+	}
+	.archibutton.activated {
+		width: 419px;
+	}
+	.worldbutton {
+		color: white;
+	}
+	.worldbutton.activated {
+		width: 462px;
+	}
+	.button.activated {
+		left: 0px;
+		top: -10px;
+		margin-top: 30px;
+		margin-left: 5px;
+		transform: none;
+		border: none;
+		font-size: 48px;
+		letter-spacing: 10px;
+		height: 90px;
+		transition: all 0.5s;
+		display: block;
+		z-index: 10;
+	}
+	#header {
+		display: inline-block;
+		z-index: 2;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		padding-left: 20px;
+		transition: 0.5s;
+		height: 50px;
+	}
+	#header h1 {
+		font-size: 24px;
+		color: black;
+		z-index: 2;
+	}
+	#header.activeWorldbuild h1{
+		color: white;
+		z-index: 2;
+	}
+	#header .headertext {
+		display: inline-block;
+		transition: all 0.5s;
+		overflow: hidden;
+		z-index: 2;
+	}
+	.innertext {
+		transition: all 0.5s;
+	}
+	#header .headertext.name.retracted{
+		transition: all 0.5s;
+	}
+	#header.activeArchitecture .Stormbril .innertext{
+		transition: all 0.5s;
+		position: relative;
+		transform: translateX(-120px);
+	}
+	#header.activeWorldbuild .Devon .innertext{
+		transition: all 0.5s;
+		position: relative;
+		transform: translateX(240px);
+	}
 
-    #header .name {
-        padding: 5px;
-        z-index: 2;
-    }
-    #header .midbreak {
-        margin: 0px;
-        font-size: 36px;
-        z-index: 2;
-    }
-    #header.activeArchitecture .headertext.midbreak,
-    #header.activeWorldbuild .headertext.midbreak {
-        transition-delay: 0.25s;
-        transform: scaleY(0);
-    }
-    #header.activeWorldbuild {
-        transition: 0.5s;
-        transform: translateX(-240px);
-        z-index: 2;
-    }
+	#header .name {
+		padding: 5px;
+		z-index: 2;
+	}
+	#header .midbreak {
+		margin: 0px;
+		font-size: 36px;
+		z-index: 2;
+	}
+	#header.activeArchitecture .headertext.midbreak,
+	#header.activeWorldbuild .headertext.midbreak {
+		transition-delay: 0.25s;
+		transform: scaleY(0);
+	}
+	#header.activeWorldbuild {
+		transition: 0.5s;
+		transform: translateX(-240px);
+		z-index: 2;
+	}
+
+	/*Styling for the Architecture Panel*/
+
+	#architecture {
+		display: block;
+	}
+
+	#projects_sidebar {
+		height: calc(100% - 130px);
+		opacity: 0%;
+		transition: all 0.5s;
+		position: relative;
+		margin: 15px;
+		margin-bottom: 85px;
+		top: 85px;
+		padding: 15px;
+		padding-right: 50px;
+		overflow-y: scroll;
+	}
+	#architecture.focusDiv #projects_sidebar {
+		display: block;
+		opacity: 100%;
+		transition: all 0.5s;
+		transition-delay: 0.25s;
+		left: 0%;
+	}
+	.archprojectsidebutton {
+		margin-top: 15px;
+		height: 150px;
+		width: 25%;
+		background: light-gray;
+		border-radius: 15px;
+		padding: 15px;
+		color: black;
+		border: 0.5px solid;
+		overflow: hidden;
+		cursor: pointer;
+	}
+
+	.archprojectsidebutton::after {
+		content: url(attr);
+		height: 180px;
+		width: calc(100% + 30px);
+		border-radius: 15px;
+		color: black;
+		border: 0.5px solid;
+		pointer-events: none;
+		position: relative;
+		top: -129px;
+		left: -16px;
+		display: block;
+		opacity: 100%;
+		transition: all 0.5s;
+		z-index: 4;		
+	}
+
+	.archprojectsidebutton[active="true"]::after {
+		opacity: 0%;
+		transition: all 0.25s;
+		z-index: 4;
+		display: block;
+		pointer-events: none;
+		position: relative;
+	}
+
+	.archprojectsidebutton h1 {
+		position: relative;
+		bottom: -85px;
+		left: -10px;
+		font-size: 45px;
+		transition: all 0.25s;
+		z-index: 5;
+	}
+
+	.archprojectsidebutton:hover > h1 {
+		bottom: -80px;
+		transition: all 0.25s;
+	}
+	.archprojectsidebutton[active="true"] > h1 {
+		bottom: -135px;
+		transition: all 0.5s;
+		color: white;
+	}
+
+	.archprojectsidebutton:active > h1 {
+		bottom: -55px;
+		transition: all 0.125s;
+	}
+
+	#archprojectsidebar1 {
+		background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 0%, rgba(255,255,255,0) 50%), url(img/architecture/buttons/project1_unselected.webp) no-repeat;
+		background-size: cover;
+	}
+	#archprojectsidebar1[active="true"] {
+		background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.35) 0%, rgba(0,0,0,0) 50%), url(img/architecture/buttons/project1_select.webp) no-repeat;
+		background-size: cover;
+	}
+	#archprojectsidebar1::after {
+		background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 0%, rgba(255,255,255,0) 50%), url(img/architecture/buttons/project1_unselected.webp) no-repeat;
+		background-size: cover;
+	}
+
+	#archprojectsidebar2 {
+		background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 0%, rgba(255,255,255,0) 50%), url(img/architecture/buttons/project2_unselected.webp) no-repeat;
+		background-size: cover;
+	}
+	#archprojectsidebar2[active="true"] {
+		background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.35) 0%, rgba(0,0,0,0) 50%), url(img/architecture/buttons/project2_select.webp) no-repeat;
+		background-size: cover;
+	}
+	#archprojectsidebar2::after {
+		background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 0%, rgba(255,255,255,0) 50%), url(img/architecture/buttons/project2_unselected.webp) no-repeat;
+		background-size: cover;
+	}
+
+	#archprojectsidebar3 {
+		background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 0%, rgba(255,255,255,0) 50%), url(img/architecture/buttons/project3_unselected.webp) no-repeat;
+		background-size: cover;
+	}
+	#archprojectsidebar3[active="true"] {
+		background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.35) 0%, rgba(0,0,0,0) 50%), url(img/architecture/buttons/project3_select.webp) no-repeat;
+		background-size: cover;
+	}
+	#archprojectsidebar3::after {
+		background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 0%, rgba(255,255,255,0) 50%), url(img/architecture/buttons/project3_unselected.webp) no-repeat;
+		background-size: cover;
+	}
+
+	#archprojectsidebar4 {
+		background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 0%, rgba(255,255,255,0) 50%), url(img/architecture/buttons/project4_unselected.webp) no-repeat;
+		background-size: cover;
+	}
+	#archprojectsidebar4[active="true"] {
+		background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.35) 0%, rgba(0,0,0,0) 50%), url(img/architecture/buttons/project4_select.webp) no-repeat;
+		background-size: cover;
+	}
+	#archprojectsidebar4::after {
+		background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 0%, rgba(255,255,255,0) 50%), url(img/architecture/buttons/project4_unselected.webp) no-repeat;
+		background-size: cover;
+	}
+
+	#archprojectsidebar5 {
+		background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 0%, rgba(255,255,255,0) 50%), url(img/architecture/buttons/project5_unselected.webp) no-repeat;
+		background-size: cover;
+	}
+	#archprojectsidebar5[active="true"] {
+		background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.35) 0%, rgba(0,0,0,0) 50%), url(img/architecture/buttons/project5_select.webp) no-repeat;
+		background-size: cover;
+	}
+	#archprojectsidebar5::after {
+		background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 0%, rgba(255,255,255,0) 50%), url(img/architecture/buttons/project5_unselected.webp) no-repeat;
+		background-size: cover;
+	}
+
+	#archprojectsidebar6 {
+		background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 0%, rgba(255,255,255,0) 50%), url(img/architecture/buttons/project6_unselected.webp) no-repeat;
+		background-size: cover;
+	}
+	#archprojectsidebar6[active="true"] {
+		background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.35) 0%, rgba(0,0,0,0) 50%), url(img/architecture/buttons/project6_select.webp) no-repeat;
+		background-size: cover;
+	}
+	#archprojectsidebar6::after {
+		background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 0%, rgba(255,255,255,0) 50%), url(img/architecture/buttons/project6_unselected.webp) no-repeat;
+		background-size: cover;
+	}
+
+	div[id^="archprojectinfo"] {
+		height: auto;
+		min-height: calc(100% - 175px);
+		width: 65%;
+		margin: 15px;
+		background: none;
+		border-radius: 15px;
+		padding: 15px;
+		color: black;
+		position: fixed;
+		right: 50px;
+		top: 115px;
+		overflow: hidden;
+	}
+
+	div[id^="archprojectinfo"] h1 {
+		position: relative;
+		top: -80px;
+		margin-top: 0px;
+		font-size: 55px;
+		opacity: 0%;
+		transition: top 0.25s ease 0s, opacity 0.125s ease 0s;
+	}
+
+	.archprojectsidebutton[active="true"] + div[id^="archprojectinfo"] h1 {
+		opacity: 100%;
+		top: -20px;
+		transition: top 0.25s ease 0.25s, opacity 0.5s ease 0.25s;
+	}
+
+	/*Styling for the Worldbuilding Panel*/
+	#worldbuildingpages {
+		opacity: 0%;
+		display: block;
+		width: 100%;
+		height: 100%;
+		transition: all 0.5s;
+	}
+	#worldbuilding.focusDiv #worldbuildingpages {
+		opacity: 100%;
+		transition: all 0.5s;
+		transition-delay: 0.25s;
+	}
+	div[id^="wbpage"] {
+		display: none;
+		width: 100%;
+		height: 100%;
+	}
+
+	div[id^="wbpage"] img {
+		display: block;
+		position: absolute;
+	}
+
+	div[id^="wbpage"].activePage {
+		display: block;
+	}
+
+	#wbpage1 {
+		background:url(img/worldbuilding/wbpage1bg.webp) no-repeat;
+		background-size: cover;
+	}
+
+	#img-wb1-logo {
+		width: 500px;
+		top: -15px;
+		left: 50%;
+		transform: translateX(-50%);
+		opacity: 0%;
+	}
+	#worldbuilding.focusDiv #img-wb1-logo {
+		opacity: 100%;
+		top: 15px;
+		transition: all 1.5s ease-out 0.25s;
+	}
+
+	#img-wb1-globe {
+		width: 1200px;
+		bottom: 0px;
+		right: -20px;
+		opacity: 0%;
+	}
+	#worldbuilding.focusDiv #img-wb1-globe {
+		right: 0px;
+		opacity: 100%;
+		transition: right 2s cubic-bezier(0.42,0,0.58,1), opacity 2s cubic-bezier(0.42,0,0.58,1);
+	}
+
+	#img-wb1-hean {
+		width: 100px;
+		top: 100px;
+		right: 80px;
+		opacity: 0%;
+	}
+	#worldbuilding.focusDiv #img-wb1-hean {
+		right: 100px;
+		opacity: 100%;
+		transition: right 2s cubic-bezier(0.42,0,0.58,1), opacity 2s cubic-bezier(0.42,0,0.58,1);
+	}
+	#wbpage1 #introduction {
+		width: 650px;
+		height: 400px;
+		color: white;
+		padding: 15px;
+		margin: 25px;
+		position: absolute;
+		left: 0px;
+		font-size: 18px;
+		bottom: 0px;
+		opacity: 0%;
+		transition: opacity 3s ease;
+	}
+	#worldbuilding.focusDiv #wbpage1 #introduction {
+		opacity: 100%;
+		transition: opacity 3s ease;
+	}
+
+	.nextpagebtn {
+		position: absolute;
+		bottom: 0px;
+		right: 0px;
+		margin: 15px;
+		cursor: pointer;
+	}
 </style>
 </head>
 <body>
-    <div id="header">
-        <h1> <section id="headerDevon" class="headertext name Devon"><section class="innertext">Devon Ruscheinski</section></section><section id="headerPipe" class="headertext midbreak">|</section><section id="headerStormbril" class="headertext name Stormbril"><section class="innertext">Stormbril</section></section> </h1>
-        
-    </div>
-    <div id="architecture">
-        <button id="archibutton" class="button archibutton">Architecture</button>
-        <div id="projects_sidebar">
-             <div id="project1">
-        
-            </div>    
-             <div id="project2">
-        
-            </div>    
-             <div id="project3">
-        
-            </div>    
-             <div id="project4">
-        
-            </div>    
-             <div id="project5">
-        
-            </div>    
-             <div id="project6">
-        
-            </div>    
-             <div id="project7">
-        
-            </div>    
-             <div id="project8">
-        
-            </div>    
-             <div id="project9">
-        
-            </div>    
-             <div id="project10">
-        
-            </div>    
-        </div>
-        <div id="projects_info">
-             <div id="projectinfo1">
-        
-            </div>    
-             <div id="projectinfo2">
-        
-            </div>    
-             <div id="projectinfo3">
-        
-            </div>    
-             <div id="projectinfo4">
-        
-            </div>    
-             <div id="projectinfo5">
-        
-            </div>    
-             <div id="projectinfo6">
-        
-            </div>    
-             <div id="projectinfo7">
-        
-            </div>    
-             <div id="projectinfo8">
-        
-            </div>    
-             <div id="projectinfo9">
-        
-            </div>    
-             <div id="projectinfo10">
-        
-            </div>    
-        
-        </div> 
-    </div>
-    <div id="worldbuilding"> 
-        <button id="worldbutton" class="button worldbutton">Worldbuilding</button>
-        <div id="wbpage1">
-        
-        </div>
-        <div id="wbpage2">
-        
-        </div>
-        <div id="wbpage3">
-        
-        </div>
-        <div id="wbpage4">
-        
-        </div>
-        <div id="wbpage5">
-        
-        </div>
-        <div id="wbpage6">
-        
-        </div>
-        <div id="wbpage7">
-        
-        </div>
-        <div id="wbpage8">
-        
-        </div>
-        <div id="wbpage9">
-        
-        </div>
-        <div id="wbpage10">
-        
-        </div>
-    </div>
+	<div id="header">
+		<h1> <section id="headerDevon" class="headertext name Devon"><section class="innertext">Devon Ruscheinski</section></section><section id="headerPipe" class="headertext midbreak">|</section><section id="headerStormbril" class="headertext name Stormbril"><section class="innertext">Stormbril</section></section> </h1>
+		
+	</div>
+	<div id="architecture">
+		<button id="archibutton" class="button archibutton">Architecture</button>
+		<div id="projects_sidebar">
+			 <div id="archprojectsidebar1" class="archprojectsidebutton" active="false">
+				<h1>Unfinished House</h1>
+			</div>
+			<div id="archprojectinfo1">
+				<h1>Unfinished House</h1>
+			</div>   
+			 <div id="archprojectsidebar2" class="archprojectsidebutton" active="false">
+				<h1>Sprout</h1>        
+			</div>
+			<div id="archprojectinfo2">
+				<h1>Sprout</h1>
+			</div>
+			 <div id="archprojectsidebar3" class="archprojectsidebutton" active="false">
+				<h1>SPMC</h1>    
+			</div>
+			<div id="archprojectinfo3">
+				<h1>Sun Peaks Medical Center</h1>
+			</div>
+			 <div id="archprojectsidebar4" class="archprojectsidebutton" active="false">
+				<h1>Bones</h1>    
+			</div>
+			<div id="archprojectinfo4">
+				<h1>Bones</h1>
+			</div>
+			 <div id="archprojectsidebar5" class="archprojectsidebutton" active="false">
+				<h1>Precedent</h1>    
+			</div>
+			<div id="archprojectinfo5">
+				<h1>Precedent Study</h1>
+			</div>
+			 <div id="archprojectsidebar6" class="archprojectsidebutton" active="false">
+				<h1>Form Finding</h1>    
+			</div>
+			<div id="archprojectinfo6">
+				<h1>Form Finding</h1>
+			</div>
+		</div>
+	</div>
+	<div id="worldbuilding"> 
+		<button id="worldbutton" class="button worldbutton">Worldbuilding</button>
+		<div id="worldbuildingpages">
+			<div id="wbpage1" class="activePage">
+				<div id="introduction">
+					<p>Cathedris is an ongoing creative outlet -- it's a worldbuilding project for the sake of creation. It's created online, piece by piece, article by article, on the platform known as World Anvil. These articles detail the worlds history, its gods, species, countries and more. Many of the articles were created as part of platform-wide challenges or competitions, during which the combination of my writing and art has won many awards and accolades. <br><br>
+					This world is dark and foreboding, playing with themes of hope versus despair within an industrial world. The world of Cathedris was created with the guidance of colossal gods that helped form it -- but Cathedris as a worldbuilding project begins when those same gods all "died". However, being gods, their bodies were too powerful to properly die. What remained were the "God-husks", giant mindless beings cursed to wander the planet for eternity. <br><br>
+					This event that created the God-husks took place many thousands of years ago, and was the origin point of modern day Cathedris. Civilizations grew and matured under the shadow of these dead gods, and as a result, much of society is based around the way they impact the world within which they wander.</p>
+				</div>
+				<div id="logo">
+					<img src="img/worldbuilding/wbpage1logo.webp" alt="Logo for the worldbuilding project known as Cathedris." id="img-wb1-logo" />
+				</div>
+
+				<div id="globe">
+					<img src="img/worldbuilding/wbpage1globe.webp" alt="A partial view of the planet Cathedris." id="img-wb1-globe" />
+				</div>
+
+				<div id="hean">
+					<img src="img/worldbuilding/wbpage1hean.webp" alt="Cathedris's moon, He'an, a giant floating corpse in space." id="img-wb1-hean" />
+				</div>
+				<button id="wbpage1button" class="nextpagebtn">Next Page</button>
+			</div>
+			<div id="wbpage2">
+			
+				<button id="wbpage1button" class="nextpagebtn">Next Page</button>
+			</div>
+			<div id="wbpage3">
+			
+				<button id="wbpage1button" class="nextpagebtn">Next Page</button>
+			</div>
+			<div id="wbpage4">
+			
+				<button id="wbpage1button" class="nextpagebtn">Next Page</button>
+			</div>
+			<div id="wbpage5">
+			
+				<button id="wbpage1button" class="nextpagebtn">Next Page</button>
+			</div>
+			<div id="wbpage6">
+			
+				<button id="wbpage1button" class="nextpagebtn">Next Page</button>
+			</div>
+			<div id="wbpage7">
+			
+				<button id="wbpage1button" class="nextpagebtn">Next Page</button>
+			</div>
+			<div id="wbpage8">
+			
+				<button id="wbpage1button" class="nextpagebtn">Next Page</button>
+			</div>
+			<div id="wbpage9">
+			
+				<button id="wbpage1button" class="nextpagebtn">Next Page</button>
+			</div>
+			<div id="wbpage10">
+			
+				<button id="wbpage1button" class="nextpagebtn">Previous Page</button>
+			</div>
+		</div>
+	</div>
 <script>
-    //setup shit
-    const archDiv = document.getElementById("architecture");
-    const worldDiv = document.getElementById("worldbuilding");
-    const archBtn = document.getElementById("archibutton");
-    const worldBtn = document.getElementById("worldbutton");
-    const headerAll = document.getElementById("header");
-    var archActive = false;
-    var worldActive = false;
-    const activeWidth = "100%";
-    const defaultWidth = "50%";
-    const inactiveWidth = "0%"
+	//setup shit
+	const archDiv = document.getElementById("architecture");
+	const worldDiv = document.getElementById("worldbuilding");
+	const archBtn = document.getElementById("archibutton");
+	const worldBtn = document.getElementById("worldbutton");
+	const headerAll = document.getElementById("header");
+	const archSelectButtons = document.getElementsByClassName("archprojectsidebutton");
+	const wbNextPageButtons = document.getElementsByClassName("nextpagebtn");
+	var archActive = false;
+	var worldActive = false;
+	const activeWidth = "100%";
+	const defaultWidth = "50%";
+	const inactiveWidth = "0%"
 
-    function togglePanelWidths() {
-        if (archActive) {
-            archDiv.style.width = activeWidth;
-            worldDiv.style.width = inactiveWidth;
-        } else if (worldActive) {
-            archDiv.style.width = inactiveWidth;
-            worldDiv.style.width = activeWidth;
-        } else {
-            archDiv.style.width = defaultWidth;
-            worldDiv.style.width = defaultWidth;
-        }
-    }
+	function togglePanelWidths() {
+		if (archActive) {
+			archDiv.style.width = activeWidth;
+			worldDiv.style.width = inactiveWidth;
+		} else if (worldActive) {
+			archDiv.style.width = inactiveWidth;
+			worldDiv.style.width = activeWidth;
+		} else {
+			archDiv.style.width = defaultWidth;
+			worldDiv.style.width = defaultWidth;
+		}
+	}
 
-    function showArchitecturePanelToggle() {
-        archActive = !archActive;
-        worldBtn.hidden = archActive;
-        worldActive = false;   
-        togglePanelWidths();
-        archBtn.classList.toggle("activated");
-        headerAll.classList.toggle("activeArchitecture");
-        archDiv.classList.toggle("focusDiv");
-    }
+	function showArchitecturePanelToggle() {
+		archActive = !archActive;
+		worldBtn.hidden = archActive;
+		worldActive = false;   
+		togglePanelWidths();
+		archBtn.classList.toggle("activated");
+		headerAll.classList.toggle("activeArchitecture");
+		archDiv.classList.toggle("focusDiv");
+	}
 
-    function showWorldbuildingPanelToggle() {
-        worldActive = !worldActive;
-        archBtn.hidden = worldActive;
-        archActive = false;
-        togglePanelWidths();
-        worldBtn.classList.toggle("activated");
-        headerAll.classList.toggle("activeWorldbuild");
-        worldDiv.classList.toggle("focusDiv");
-    }
+	function showWorldbuildingPanelToggle() {
+		worldActive = !worldActive;
+		archBtn.hidden = worldActive;
+		archActive = false;
+		togglePanelWidths();
+		worldBtn.classList.toggle("activated");
+		headerAll.classList.toggle("activeWorldbuild");
+		worldDiv.classList.toggle("focusDiv");
+	}
 
-    //script functions
-    archBtn.onclick = function () {
-        showArchitecturePanelToggle();
-    };
+	function activateChosenProject(btn) {
+		for (const butn of archSelectButtons) {
+			if (butn !== btn) {
+				butn.setAttribute("active", false);
+			}
+		}
+		if (btn.getAttribute("active") === "true") {
+			btn.setAttribute("active", false);
+		} else {			
+			btn.setAttribute("active", true);
+		}
+	}
 
-    worldBtn.onclick = function () {
-        showWorldbuildingPanelToggle();
-    };
+	function turnPage(btn) {
+		for (const butn of wbNextPageButtons) {
+			if (butn !== btn) {
+				butn.setAttribute("active", false);
+			}
+		}
+		if (btn.getAttribute("active") === "true") {
+			btn.setAttribute("active", false);
+		} else {			
+			btn.setAttribute("active", true);
+		}
+	}
+
+
+
+	//script functions
+	archBtn.onclick = function () {
+		showArchitecturePanelToggle();
+	};
+
+	worldBtn.onclick = function () {
+		showWorldbuildingPanelToggle();
+	};
+
+
+	for (const button of archSelectButtons) {
+		button.onclick = function() {
+			activateChosenProject(button);
+		}
+		button.setAttribute("active", false);
+	};
+
+	for (const button of wbNextPageButtons) {	
+		button.onclick = function() {
+			var target = event.target;
+	   		var parent = target.parentElement;
+			turnPage(button);
+		 	if (event.target.parentElement.nextElementSibling) {
+	 			event.target.parentElement.nextElementSibling.classList.toggle("activePage");
+	 		} else {
+	 			parent.classList.remove("activePage");
+	 			event.target.parentElement.previousElementSibling.classList.toggle("activePage");
+	 			event.target.parentElement.nextElementSibling.classList.toggle("activePage");
+	 		}
+	 		parent.classList.toggle("activePage");
+		}
+		button.setAttribute("active",false);
+	};
+		// btn.addEventListener("click", function() {
+		//  	if (event.target.parentElement.nextElementSibling) {
+		//  		event.target.parentElement.nextElementSibling.classList.add("currentPage");
+		//  	}
+		//  	if (event.target.parentElement.previousElementSibling) {
+		//  	event.target.parentElement.previousElementSibling.classlist.add("previouspage");
+		//  	}
+		// });
 </script>
 </body>
 </html>
