@@ -492,9 +492,15 @@
 		border: none;
 		color: white;
 		font-size: 18px;
+		display: none;
 	}
-	.nextpagebtn.active {
-		right: 50px;
+	.activePage + .nextpagebtn {
+		display: block;
+	}
+
+	.nextpagebtn[active="true"] {
+		display: block;
+		right: 150px;
 	}
 </style>
 </head>
@@ -654,43 +660,42 @@
 				<div id="hean">
 					<img src="img/worldbuilding/wbpage1hean.webp" alt="Cathedris's moon, He'an, a giant floating corpse in space." id="img-wb1-hean" />
 				</div>
-				<button id="wbpage1button" class="nextpagebtn">Next Page</button>
 			</div>
+			<button id="wbpage1button" class="nextpagebtn">Next Page</button>
 			<div id="wbpage2">
 			
-				<button id="wbpage1button" class="nextpagebtn">Next Page</button>
 			</div>
+			<button id="wbpage2button" class="nextpagebtn">Next Page</button>
 			<div id="wbpage3">
 			
-				<button id="wbpage1button" class="nextpagebtn">Next Page</button>
 			</div>
+			<button id="wbpage3button" class="nextpagebtn">Next Page</button>
 			<div id="wbpage4">
 			
-				<button id="wbpage1button" class="nextpagebtn">Next Page</button>
 			</div>
+			<button id="wbpage4button" class="nextpagebtn">Next Page</button>
 			<div id="wbpage5">
 			
-				<button id="wbpage1button" class="nextpagebtn">Next Page</button>
 			</div>
+			<button id="wbpage5button" class="nextpagebtn">Next Page</button>
 			<div id="wbpage6">
 			
-				<button id="wbpage1button" class="nextpagebtn">Next Page</button>
 			</div>
+			<button id="wbpage6button" class="nextpagebtn">Next Page</button>
 			<div id="wbpage7">
 			
-				<button id="wbpage1button" class="nextpagebtn">Next Page</button>
 			</div>
+			<button id="wbpage7button" class="nextpagebtn">Next Page</button>
 			<div id="wbpage8">
 			
-				<button id="wbpage1button" class="nextpagebtn">Next Page</button>
 			</div>
+			<button id="wbpage8button" class="nextpagebtn">Next Page</button>
 			<div id="wbpage9">
 			
-				<button id="wbpage1button" class="nextpagebtn">Next Page</button>
 			</div>
+			<button id="wbpage9button" class="nextpagebtn">Next Page</button>
 			<div id="wbpage10">
 			
-				<button id="wbpage1button" class="nextpagebtn">Previous Page</button>
 			</div>
 		</div>
 	</div>
@@ -722,9 +727,9 @@
 			worldDiv.style.display = "block";
 		} else {
 			worldDiv.style.display = "block";
-			worldDiv.style.width = defaultWidth;
+			setTimeout("worldDiv.style.width = defaultWidth;", 10)
 			archDiv.style.display = "block";
-			archDiv.style.width = defaultWidth;
+			setTimeout("archDiv.style.width = defaultWidth;", 10)
 		}
 	}
 	function showArchitecturePanelToggle() {
@@ -761,15 +766,21 @@
 	}
 
 	function turnPage(btn) {
-		for (const butn of wbNextPageButtons) {
-			if (butn !== btn) {
-				butn.setAttribute("active", false);
-			}
-		}
 		if (btn.getAttribute("active") === "true") {
 			btn.setAttribute("active", false);
+			btn.innerHTML = "Next Page";
+			if (btn.previousElementSibling.previousElementSibling) {
+				btn.previousElementSibling.previousElementSibling.setAttribute("active", true);
+				btn.previousElementSibling.previousElementSibling.innerHTML = "Previous Page";
+			}
+
 		} else {			
 			btn.setAttribute("active", true);
+			btn.innerHTML = "Previous Page";
+			if (btn.previousElementSibling.previousElementSibling) {
+				btn.previousElementSibling.previousElementSibling.setAttribute("active", false);
+				btn.previousElementSibling.previousElementSibling.innerHTML = "Next Page";
+			}
 		}
 	}
 
@@ -795,27 +806,13 @@
 	for (const button of wbNextPageButtons) {	
 		button.onclick = function() {
 			var target = event.target;
-	   		var parent = target.parentElement;
+	   		var nextSibling = target.nextElementSibling;
+	   		var prevSibling = target.previousElementSibling
+ 			prevSibling.classList.toggle("activePage");
+ 			nextSibling.classList.toggle("activePage");
 			turnPage(button);
-		 	if (event.target.parentElement.nextElementSibling) {
-	 			event.target.parentElement.nextElementSibling.classList.toggle("activePage");
-	 		} else {
-	 			parent.classList.remove("activePage");
-	 			event.target.parentElement.previousElementSibling.classList.toggle("activePage");
-	 			event.target.parentElement.nextElementSibling.classList.toggle("activePage");
-	 		}
-	 		parent.classList.toggle("activePage");
 		}
-		button.setAttribute("active",false);
 	};
-		// btn.addEventListener("click", function() {
-		//  	if (event.target.parentElement.nextElementSibling) {
-		//  		event.target.parentElement.nextElementSibling.classList.add("currentPage");
-		//  	}
-		//  	if (event.target.parentElement.previousElementSibling) {
-		//  	event.target.parentElement.previousElementSibling.classlist.add("previouspage");
-		//  	}
-		// });
 </script>
 </body>
 </html>
