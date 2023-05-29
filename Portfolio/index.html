@@ -424,8 +424,59 @@
 	}
 
 	#wbpage1 {
-		background:url(img/worldbuilding/wbpage1bg.webp) no-repeat;
+		background:url(img/worldbuilding/wbpage1bg.webp) no-repeat center;
 		background-size: cover;
+		animation: load-in 1s ease 0s normal;
+		animation-fill-mode: forwards;
+	}
+
+	#wbpage2 {
+		background:url(img/worldbuilding/wbpage2bg.webp) no-repeat center;
+		background-size: cover;
+		animation: load-in 1s ease 0s normal;
+		animation-fill-mode: forwards;
+	}
+
+	#wbpage3 {
+		background:url(img/worldbuilding/wbpage3bg.webp) no-repeat center;
+		background-size: cover;
+		animation: load-in 1s ease 0s normal;
+		animation-fill-mode: forwards;
+	}
+
+	#wbpage4 {
+		background:url(img/worldbuilding/wbpage4bg.webp) no-repeat center;
+		background-size: cover;
+		animation: load-in 1s ease 0s normal;
+		animation-fill-mode: forwards;
+	}
+
+	#wbpage5 {
+		background:url(img/worldbuilding/wbpage5bg.webp) no-repeat center;
+		background-size: cover;
+		animation: load-in 1s ease 0s normal;
+		animation-fill-mode: forwards;
+	}
+
+	#wbpage6 {
+		background:url(img/worldbuilding/wbpage6bg.webp) no-repeat center;
+		background-size: cover;
+		animation: load-in 1s ease 0s normal;
+		animation-fill-mode: forwards;
+	}
+
+	#wbpage7 {
+		background:url(img/worldbuilding/wbpage7bg.webp) no-repeat center;
+		background-size: cover;
+		animation: load-in 1s ease 0s normal;
+		animation-fill-mode: forwards;
+	}
+
+	#wbpage8 {
+		background:url(img/worldbuilding/wbpage8bg.webp) no-repeat center;
+		background-size: cover;
+		animation: load-in 1s ease 0s normal;
+		animation-fill-mode: forwards;
 	}
 
 	#img-wb1-logo {
@@ -493,6 +544,7 @@
 		color: white;
 		font-size: 18px;
 		display: none;
+		z-index: 5;
 	}
 	.activePage + .nextpagebtn {
 		display: block;
@@ -501,6 +553,86 @@
 	.nextpagebtn[active="true"] {
 		display: block;
 		right: 150px;
+	}
+
+	.godhuskcollection {
+		display: flex;
+  		flex-flow: row wrap;
+  		justify-content: center;
+  		align-items: center;
+		width: 700px;
+		height: 75vh;
+		position: absolute;
+		bottom: 100px;
+		left: 5%;
+	}
+	.godhuskcollection .smallhusk {
+		flex: 0 0 200px;
+		display: flex;
+  		justify-content: center;
+  		align-items: center;
+		height: 150px;
+		margin-bottom: 10px;
+		background: #00000025;
+		box-shadow: 2px 2px 5px 3px #0007, 2px 2px 20px 5px #0004 inset;
+		backdrop-filter: blur(2px);
+		border-radius: 10px;
+		margin-right: 10px;
+		transition: all 0.25s;
+		cursor: pointer;
+	}
+	.godhuskcollection .smallhusk[selected="true"] {
+		background: #FFF3C224;
+	}
+	.godhuskcollection .smallhusk:hover {
+		background: #F8F2DA25;
+	}
+	.godhuskcollection .smallhusk:active {
+		background: #FFF3C224;
+		box-shadow: 2px 2px 5px 1px #0007, 2px 2px 30px 8px #0004 inset;
+	}
+	.smallhusk img {
+		height: 140px;
+		transition: all 0.25s;
+		filter: drop-shadow(0 0 30px black);
+	}
+	.smallhusk:hover img {
+		filter: drop-shadow(0 0 40px black);
+	}
+	.smallhusk:active img {
+		filter: drop-shadow(0 0 20px black);
+		transform: scale(97%);
+	}
+
+	#wbpage2 #displayedhusk {
+		display: block;
+		position: absolute;
+		width: 700px;
+		height: 75vh;
+		bottom: 0px;
+		right: 0px;
+		margin: 15px;
+	}
+	#wbpage2 .bighusk img {
+		display: block;
+		position: absolute;
+		height: 90%;
+		bottom: 0px;
+		right: 0px;
+	}
+	#wbpage2 .bighusk[hidden="true"] {
+		display: none;
+	}
+	#wbpage2 .bighusk[hidden="false"] {
+		display: block;
+		animation: load-in 1s ease 0s normal;
+		animation-fill-mode: forwards;
+	}
+
+	#wbpage3 #qurbig {
+		top: 100px;
+		animation: load-in 2s ease 0s normal;
+		animation-fill-mode: forwards;
 	}
 </style>
 </head>
@@ -663,19 +795,125 @@
 			</div>
 			<button id="wbpage1button" class="nextpagebtn">Next Page</button>
 			<div id="wbpage2">
+				<div id="p2introduction">
+					
+				</div>
+				<div id="p2bodytext">
+					
+				</div>
+				<div id="godhusks" class="godhuskcollection">
+					<div class="smallhusk" selected="true"><img src="img/worldbuilding/avartariansmall.webp" alt="" id="avartariansmall" /></div> 
+					<div class="smallhusk"><img src="img/worldbuilding/cododsmall.webp" alt="" id="cododsmall" /></div> 
+					<div class="smallhusk"><img src="img/worldbuilding/xiuthansmall.webp" alt="" id="xiuthansmall" /></div> 
+					<div class="smallhusk"><img src="img/worldbuilding/faradsmall.webp" alt="" id="faradsmall" /></div> 
+					<div class="smallhusk"><img src="img/worldbuilding/heansmall.webp" alt="" id="heansmall" /></div> 
+					<div class="smallhusk"><img src="img/worldbuilding/miyusmall.webp" alt="" id="miyusmall" /></div> 
+					<div class="smallhusk"><img src="img/worldbuilding/caedsmall.webp" alt="" id="caedsmall" /></div> 
+					<div class="smallhusk"><img src="img/worldbuilding/qetzelsmall.webp" alt="" id="qetzelsmall" /></div> 
+					<div class="smallhusk"><img src="img/worldbuilding/qursmall.webp" alt="" id="qursmall" /></div> 
+					<div class="smallhusk"><img src="img/worldbuilding/raktossmall.webp" alt="" id="raktossmall" /></div> 
+					<div class="smallhusk"><img src="img/worldbuilding/sharenskussmall.webp" alt="" id="sharenskussmall" /></div> 
+					<div class="smallhusk"><img src="img/worldbuilding/tatetesmall.webp" alt="" id="tatetesmall" /></div> 
+					<div class="smallhusk"><img src="img/worldbuilding/tkaliasmall.webp" alt="" id="tkaliasmall" /></div> 
+					<div class="smallhusk"><img src="img/worldbuilding/dimitismall.webp" alt="" id="dimitismall" /></div> 
+				</div>
+				<div id="displayedhusk">
+					<div id="avartarian" class="bighusk" hidden="false">
+						<img src="img/worldbuilding/avartarianbig.webp" alt="" id="avartarianbig" /> </div>
+
+					<div id="codod" class="bighusk" hidden="true">
+						<img src="img/worldbuilding/cododbig.webp" alt="" id="cododbig" />
+
+					</div>
+					<div id="xiuthan" class="bighusk" hidden="true">
+						<img src="img/worldbuilding/xiuthanbig.webp" alt="" id="xiuthanbig" /> 
+
+					</div>
+					<div id="farad" class="bighusk" hidden="true">
+						<img src="img/worldbuilding/faradbig.webp" alt="" id="faradbig" />
+
+					</div>
+					<div id="hean" class="bighusk" hidden="true">
+						<img src="img/worldbuilding/heanbig.webp" alt="" id="heanbig" /> 
+
+					</div>
+					<div id="miyu" class="bighusk" hidden="true">
+						<img src="img/worldbuilding/miyubig.webp" alt="" id="miyubig" />
+
+					</div>
+					<div id="caed" class="bighusk" hidden="true">
+						<img src="img/worldbuilding/caedbig.webp" alt="" id="caedbig" /> 
+
+					</div>
+					<div id="qetzel" class="bighusk" hidden="true">
+						<img src="img/worldbuilding/qetzelbig.webp" alt="" id="qetzelbig" />
+
+					</div>
+					<div id="qur" class="bighusk" hidden="true">
+						<img src="img/worldbuilding/qurbig.webp" alt="" id="qurbig" /> 
+
+					</div>
+					<div id="raktos" class="bighusk" hidden="true">
+						<img src="img/worldbuilding/raktosbig.webp" alt="" id="raktosbig" />
+
+					</div>
+					<div id="sharenskus" class="bighusk" hidden="true">
+						<img src="img/worldbuilding/sharenskusbig.webp" alt="" id="sharenskusbig" />
+
+					</div>
+					<div id="tatete" class="bighusk" hidden="true">
+						<img src="img/worldbuilding/tatetebig.webp" alt="" id="tatetebig" />
+
+					</div>
+					<div id="tkalia" class="bighusk" hidden="true">
+						<img src="img/worldbuilding/tkaliabig.webp" alt="" id="tkaliabig" />
+
+					</div>
+					<div id="dimiti" class="bighusk" hidden="true">
+						<img src="img/worldbuilding/dimitibig.webp" alt="" id="dimitibig" />
+
+					</div>
+				</div>
 			
 			</div>
 			<button id="wbpage2button" class="nextpagebtn">Next Page</button>
 			<div id="wbpage3">
-			
+				<div id="p3header">
+					
+				</div>
+				<div id="qurintroduction">
+					<img src="img/worldbuilding/qurbig.webp" alt="" id="qurbig"/>
+					<div id="qurtext1">
+						
+					</div>
+				</div>
+				<div id="qursketches">
+					
+				</div>
 			</div>
 			<button id="wbpage3button" class="nextpagebtn">Next Page</button>
 			<div id="wbpage4">
-			
+				<div id="p4header">
+					
+				</div>
+				<div id="dimitiintroduction">
+					
+				</div>
+				<div id="dimitisketches">
+					
+				</div>
 			</div>
 			<button id="wbpage4button" class="nextpagebtn">Next Page</button>
 			<div id="wbpage5">
-			
+				<div id="p5header">
+					
+				</div>
+				<div id="tkaliaside">
+					
+				</div>
+				<div id="xiuthanside">
+					
+				</div>
 			</div>
 			<button id="wbpage5button" class="nextpagebtn">Next Page</button>
 			<div id="wbpage6">
@@ -683,19 +921,39 @@
 			</div>
 			<button id="wbpage6button" class="nextpagebtn">Next Page</button>
 			<div id="wbpage7">
-			
+				<div id="p7header">
+					
+				</div>
+				<div id="sharenskusindustry">
+					
+				</div>
 			</div>
 			<button id="wbpage7button" class="nextpagebtn">Next Page</button>
 			<div id="wbpage8">
-			
+				<div id="p8header">
+					
+				</div>
+				<div id="monsterinfo">
+					
+				</div>
 			</div>
 			<button id="wbpage8button" class="nextpagebtn">Next Page</button>
 			<div id="wbpage9">
-			
+				<div id="russinintro">
+					
+				</div>
+				<div id="mappingprocess">
+					
+				</div>
 			</div>
 			<button id="wbpage9button" class="nextpagebtn">Next Page</button>
 			<div id="wbpage10">
-			
+				<div id="catalurgyintro">
+					
+				</div>
+				<div id="firstblood">
+					
+				</div>
 			</div>
 		</div>
 	</div>
@@ -708,6 +966,8 @@
 	const headerAll = document.getElementById("header");
 	const archSelectButtons = document.getElementsByClassName("archprojectsidebutton");
 	const wbNextPageButtons = document.getElementsByClassName("nextpagebtn");
+	const huskSelectButtons = document.getElementsByClassName("smallhusk");
+	const bigHuskShowcase = document.getElementsByClassName("bighusk");
 	var archActive = false;
 	var worldActive = false;
 	const activeWidth = "100%";
@@ -784,6 +1044,30 @@
 		}
 	}
 
+	function showChosenHusk(btn) {
+		for (const butn of huskSelectButtons) {
+			if (butn !== btn) {
+				butn.setAttribute("selected", false);
+			}
+		}
+		if (btn.getAttribute("selected") === "true") {
+			btn.setAttribute("selected", false);
+		} else {			
+			btn.setAttribute("selected", true);
+		}
+		var selectedBighusk = Array.prototype.indexOf.call(huskSelectButtons, btn);
+		var visibleBighusk = bigHuskShowcase[selectedBighusk];
+		for (const bighusk of bigHuskShowcase) {
+			if (bighusk !== visibleBighusk) {
+				bighusk.setAttribute("hidden", true);
+			}
+		}
+		if (visibleBighusk.getAttribute("hidden") === "false") {
+			visibleBighusk.setAttribute("hidden", true);
+		} else {
+			visibleBighusk.setAttribute("hidden", false);
+		}
+	}
 
 
 	//script functions
@@ -813,6 +1097,13 @@
 			turnPage(button);
 		}
 	};
+	for (const button of huskSelectButtons) {
+		button.onclick = function() {
+			showChosenHusk(button);
+		}
+	};
+
+
 </script>
 </body>
 </html>
