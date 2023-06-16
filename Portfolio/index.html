@@ -384,6 +384,10 @@
 		50% {top: -5px; opacity: 50%;}
 		100% {top: -5px; opacity: 100%;}
 	}
+	@keyframes slidedown {
+		from {transform: translateY(0px); opacity: 0%}
+		to {transform: translateY(15px); opacity: 100%;}
+	}
 	@keyframes divunload {
 		0% {display: block;}
 		99% {display: block;}
@@ -474,6 +478,20 @@
 
 	#wbpage8 {
 		background:url(img/worldbuilding/wbpage8bg.webp) no-repeat center;
+		background-size: cover;
+		animation: load-in 1s ease 0s normal;
+		animation-fill-mode: forwards;
+	}
+
+	#wbpage9 {
+		background:url(img/worldbuilding/wbpage9bg.webp) no-repeat center;
+		background-size: cover;
+		animation: load-in 1s ease 0s normal;
+		animation-fill-mode: forwards;
+	}
+
+	#wbpage10 {
+		background:url(img/worldbuilding/wbpage10bg.webp) no-repeat center;
 		background-size: cover;
 		animation: load-in 1s ease 0s normal;
 		animation-fill-mode: forwards;
@@ -634,6 +652,217 @@
 		animation: load-in 2s ease 0s normal;
 		animation-fill-mode: forwards;
 	}
+
+	#wbpage3 #qursketches img,
+	#wbpage4 #dimitisketches img {
+		display: block;
+		position: absolute;
+		margin: 15px;
+		animation: slidedown 2s ease 0s normal;
+		animation-fill-mode: forwards;
+	}
+
+	#qursketch1 {
+		width: 650px;
+		top: 85px;
+		right: 15%;
+	}
+
+	#qursketch2 {
+		width: 280px;
+		top: -55px;
+		right: 0px;
+	}
+
+	#qursketch3 {
+		width: 200px;
+		bottom: 35px;
+		right: 33%;
+	}
+
+	#qursketch4 {
+		width: 400px;
+		bottom: 15px;
+		right: 0px;
+	}
+
+	#wbpage4 #dimitibig {
+		top: 100px;
+		right: 0px;
+		width: 60%;
+		animation: load-in 2s ease 0s normal;
+		animation-fill-mode: forwards;
+	}
+
+	#dimisketch1 {
+		width: 700px;
+		top: 0px;
+		left: 15%;
+	}
+
+	#dimisketch2 {
+		width: 500px;
+		bottom: 20%;
+		left: 20px;
+	}
+
+	#dimisketch3 {
+		width: 45%;
+		bottom: 0px;
+		left: 5%;
+	}
+
+	#tkaliaside #tkaliabig {
+		width: 625px;
+		bottom: -50px;
+		left: 17%;
+		animation: load-in 2s ease 0s normal;
+		animation-fill-mode: forwards;
+	}
+
+	#tkaliasketch1 {
+		width: 200px;
+		bottom: 35%;
+		left: 10px;
+		animation: slidedown 2s ease 0s normal;
+		animation-fill-mode: forwards;
+	}
+
+	#tkaliasketch2 {
+		width: 250px;
+		bottom: 10px;
+		left: 7%;
+		animation: slidedown 2s ease 0s normal;
+		animation-fill-mode: forwards;
+	}
+
+	#tkaliasketch3 {
+		width: 150px;
+		bottom: 100px;
+		left: 20px;
+		animation: slidedown 2s ease 0s normal;
+		animation-fill-mode: forwards;
+	}
+
+	#xiuthanside #xiuthanbig {
+		width: 700px;
+		right: 20%;
+		bottom: -200px;
+		animation: load-in 2s ease 0s normal;
+		animation-fill-mode: forwards;
+	}
+
+	#xiuthansketch1 {
+		width: 150px;
+		top: 15%;
+		right: 15%;
+		animation: slidedown 2s ease 0s normal;
+		animation-fill-mode: forwards;
+	}
+
+	#xiuthansketch2 {
+		width: 150px;
+		top: 30%;
+		right: 4%;
+		animation: slidedown 2s ease 0s normal;
+		animation-fill-mode: forwards;
+	}
+
+	#xiuthansketch3 {
+		width: 350px;
+		bottom: 0px;
+		right: -15px;
+		animation: slidedown 2s ease 0s normal;
+		animation-fill-mode: forwards;
+	}
+
+	#comprilith #towerimg {
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%,-50%);
+		height: 90%;
+		z-index: 1;
+	}
+	#comprilith #compbgcoverpic {
+		z-index: 2;
+		width: 100%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		top: 50%;
+	}
+	#comprilith #tkaliacomp {
+		width: 200px;
+		left: 300px;
+		bottom: 70px;
+		filter: blur(1px);
+	}
+
+	@keyframes float-bob {
+		from {transform: translateY(0px);}
+		to {transform: translateY(-10px); }
+	}
+
+	#comprilith #raktoscomp {
+		width: 200px;
+		right: 300px;
+		bottom: 70px;
+		filter: blur(1px);
+		animation: float-bob 5s ease infinite alternate;
+	}
+
+	#sharenskusindustry #sharenskusportraitindustry {
+		width: 600px;
+		right: 0px;
+		bottom: -200px;
+	}
+
+	#monsterinfo #handspider {
+		width: 450px;
+		bottom: 30%;
+		left: 10%;
+	}
+
+	#monsterinfo #hearteel {
+		width: 400px;
+		bottom: 25%;
+		left: 49%;
+		transform: translateX(-50%);
+	}
+
+	#monsterinfo #gooliverslug {
+		width: 700px;
+		bottom: 30%;
+		right: 0%;
+	}
+
+	#mappingprocess {
+		position: absolute;
+		width: 33%;
+		height: 100%;
+		right: 0px;
+	}
+
+	#mappingprocess img {
+		position: relative;
+		left: 20%;
+		transform: translateX(-50%);
+		width: 30%;
+	}
+
+	#mappingprocess #russinprocess1 {
+		top: 10%;
+	}
+	#mappingprocess #russinprocess2 {
+		top: 30%;
+	}
+	#mappingprocess #russinprocess3 {
+		top: 50%;
+	}
+	#mappingprocess #russinprocess4 {
+		top: 70%;
+	}
+
+
 </style>
 </head>
 <body>
@@ -888,7 +1117,16 @@
 					</div>
 				</div>
 				<div id="qursketches">
-					
+					<img src="img/worldbuilding/qursketch1.webp" alt="" id="qursketch1"/>
+					<img src="img/worldbuilding/qursketch2.webp" alt="" id="qursketch2"/>
+					<img src="img/worldbuilding/qursketch3.webp" alt="" id="qursketch3"/>
+					<img src="img/worldbuilding/qursketch4.webp" alt="" id="qursketch4"/>
+					<div id="qursketchtext1">
+						
+					</div>
+					<div id="qursketchtext2">
+						
+					</div>					
 				</div>
 			</div>
 			<button id="wbpage3button" class="nextpagebtn">Next Page</button>
@@ -897,10 +1135,19 @@
 					
 				</div>
 				<div id="dimitiintroduction">
+					<img src="img/worldbuilding/dimitibig.webp" alt="" id="dimitibig"/>
+					<div id="dimititext1">
+						
+					</div>
 					
 				</div>
 				<div id="dimitisketches">
-					
+					<img src="img/worldbuilding/dimisketch1.webp" alt="" id="dimisketch1"/>
+					<img src="img/worldbuilding/dimisketch2.webp" alt="" id="dimisketch2"/>
+					<img src="img/worldbuilding/dimisketch3.webp" alt="" id="dimisketch3"/>
+					<div id="dimitisketchtext1">
+						
+					</div>					
 				</div>
 			</div>
 			<button id="wbpage4button" class="nextpagebtn">Next Page</button>
@@ -909,15 +1156,29 @@
 					
 				</div>
 				<div id="tkaliaside">
+					<img src="img/worldbuilding/tkaliabig.webp" alt="" id="tkaliabig"/>
+					<img src="img/worldbuilding/tkaliasketch1.webp" alt="" id="tkaliasketch1"/>
+					<img src="img/worldbuilding/tkaliasketch2.webp" alt="" id="tkaliasketch2"/>
+					<img src="img/worldbuilding/tkaliasketch3.webp" alt="" id="tkaliasketch3"/>
 					
 				</div>
 				<div id="xiuthanside">
+					<img src="img/worldbuilding/xiuthanbig.webp" alt="" id="xiuthanbig"/>
+					<img src="img/worldbuilding/xiuthansketch1.webp" alt="" id="xiuthansketch1"/>
+					<img src="img/worldbuilding/xiuthansketch2.webp" alt="" id="xiuthansketch2"/>
+					<img src="img/worldbuilding/xiuthansketch3.webp" alt="" id="xiuthansketch3"/>
 					
 				</div>
 			</div>
 			<button id="wbpage5button" class="nextpagebtn">Next Page</button>
 			<div id="wbpage6">
-			
+				<div id="comprilith">
+					<img src="img/worldbuilding/tkaliasmall.webp" alt="" id="tkaliacomp"/>
+					<img src="img/worldbuilding/raktossmall.webp" alt="" id="raktoscomp"/>
+					<img src="img/worldbuilding/wbpage6bg-ontop.webp" alt="" id="compbgcoverpic">
+					<img src="img/worldbuilding/comprilith.webp" alt="" id="towerimg"/>
+
+				</div>
 			</div>
 			<button id="wbpage6button" class="nextpagebtn">Next Page</button>
 			<div id="wbpage7">
@@ -925,7 +1186,7 @@
 					
 				</div>
 				<div id="sharenskusindustry">
-					
+					<img src="img/worldbuilding/sharenskusbig.webp" alt="" id="sharenskusportraitindustry"/>					
 				</div>
 			</div>
 			<button id="wbpage7button" class="nextpagebtn">Next Page</button>
@@ -934,6 +1195,9 @@
 					
 				</div>
 				<div id="monsterinfo">
+					<img src="img/worldbuilding/handspider.webp" alt="" id="handspider"/>
+					<img src="img/worldbuilding/hearteel.webp" alt="" id="hearteel"/>
+					<img src="img/worldbuilding/gooliverslug.webp" alt="" id="gooliverslug"/>
 					
 				</div>
 			</div>
@@ -943,7 +1207,10 @@
 					
 				</div>
 				<div id="mappingprocess">
-					
+					<img src="img/worldbuilding/russinmapprocess1.webp" alt="" id="russinprocess1">
+					<img src="img/worldbuilding/russinmapprocess2.webp" alt="" id="russinprocess2">
+					<img src="img/worldbuilding/russinmapprocess3.webp" alt="" id="russinprocess3">
+					<img src="img/worldbuilding/russinmapprocess4.webp" alt="" id="russinprocess4">
 				</div>
 			</div>
 			<button id="wbpage9button" class="nextpagebtn">Next Page</button>
